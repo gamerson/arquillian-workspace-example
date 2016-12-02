@@ -1,3 +1,3 @@
 Bundle-Name: sample-portlet
-Bundle-SymbolicName: com.liferay.arquillian.sample
+Bundle-SymbolicName: sample.portlet
 Bundle-Version: 1.0.0

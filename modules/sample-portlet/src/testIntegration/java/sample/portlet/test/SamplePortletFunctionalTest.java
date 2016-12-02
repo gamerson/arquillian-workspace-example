@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.liferay.arquillian.sample.test;
+package sample.portlet.test;
 
 import com.liferay.arquillian.portal.annotation.PortalURL;
 import com.liferay.portal.kernel.exception.PortalException;
@@ -25,6 +25,7 @@ import java.io.IOException;
 import java.net.URL;
 
 import org.jboss.arquillian.container.test.api.Deployment;
+import org.jboss.arquillian.container.test.api.OperateOnDeployment;
 import org.jboss.arquillian.container.test.api.RunAsClient;
 import org.jboss.arquillian.drone.api.annotation.Drone;
 import org.jboss.arquillian.junit.Arquillian;
@@ -44,9 +45,16 @@ import org.openqa.selenium.support.FindBy;
  */
 @RunAsClient
 @RunWith(Arquillian.class)
-public class BasicPortletFunctionalTest {
+public class SamplePortletFunctionalTest {
 
-	@Deployment
+	@Deployment(name="service",order=1)
+	public static JavaArchive createService() throws Exception {
+		final File serviceJarFile = new File(System.getProperty("serviceJarFile"));
+
+		return ShrinkWrap.createFromZipFile(JavaArchive.class, serviceJarFile);
+	}
+	
+	@Deployment(name="portlet",order=2)
 	public static JavaArchive create() throws Exception {
 		final File jarFile = new File(System.getProperty("jarFile"));
 
@@ -54,6 +62,7 @@ public class BasicPortletFunctionalTest {
 	}
 
 	@Test
+	@OperateOnDeployment("portlet")
 	public void testAddPortletAction()
 		throws InterruptedException, IOException, PortalException {
 
@@ -94,7 +103,7 @@ public class BasicPortletFunctionalTest {
 	@FindBy(css = "input[id$='firstParameter']")
 	private WebElement _firstParamter;
 
-	@PortalURL("arquillian_sample_portlet")
+	@PortalURL("sample_portlet")
 	private URL _portlerURL;
 
 	@FindBy(css = "span[class='result']")

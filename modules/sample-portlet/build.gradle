@@ -19,8 +19,13 @@ startTestableTomcat {
 
 testIntegration {
 	dependsOn jar
+	dependsOn ":modules:sample-service:jar"
 
 	systemProperty 'jarFile', jar.archivePath
+	
+	doFirst {
+		systemProperty 'serviceJarFile', project(":modules:sample-service").tasks.jar.archivePath
+	}
 }
 
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat

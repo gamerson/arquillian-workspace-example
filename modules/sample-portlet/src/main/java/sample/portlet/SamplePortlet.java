@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.liferay.arquillian.sample.portlet;
+package sample.portlet;
 
 import com.liferay.portal.kernel.portlet.PortletURLFactoryUtil;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
@@ -40,10 +40,10 @@ import org.osgi.service.component.annotations.Reference;
 	property = {
 		"com.liferay.portlet.display-category=category.sample",
 		"com.liferay.portlet.instanceable=false",
-		"javax.portlet.display-name=Arquillian Sample Portlet",
+		"javax.portlet.display-name=Sample Portlet",
 		"javax.portlet.init-param.template-path=/",
 		"javax.portlet.init-param.view-template=/view.jsp",
-		"javax.portlet.name=arquillian_sample_portlet",
+		"javax.portlet.name=sample_portlet",
 		"javax.portlet.resource-bundle=content.Language",
 		"javax.portlet.security-role-ref=power-user,user"
 	},
@@ -68,7 +68,7 @@ public class SamplePortlet extends MVCPortlet {
 		final long plid = themeDisplay.getPlid();
 
 		final PortletURL portletURL = PortletURLFactoryUtil.create(
-			actionRequest, "arquillian_sample_portlet", plid,
+			actionRequest, "sample_portlet", plid,
 			PortletRequest.RENDER_PHASE);
 
 		portletURL.setParameter(
