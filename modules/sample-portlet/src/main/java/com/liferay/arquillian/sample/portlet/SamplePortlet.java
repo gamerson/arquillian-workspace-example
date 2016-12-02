@@ -16,12 +16,13 @@
 
 package com.liferay.arquillian.sample.portlet;
 
-import com.liferay.arquillian.sample.service.SampleService;
 import com.liferay.portal.kernel.portlet.PortletURLFactoryUtil;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
 import com.liferay.portal.kernel.theme.ThemeDisplay;
 import com.liferay.portal.kernel.util.ParamUtil;
 import com.liferay.portal.kernel.util.WebKeys;
+
+import sample.service.SampleService;
 
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;

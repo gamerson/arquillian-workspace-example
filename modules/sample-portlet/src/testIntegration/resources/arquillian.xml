@@ -11,12 +11,4 @@
 		<property name="url">http://localhost:8080</property>
 	</extension>
 
-	<extension qualifier="jacoco">
-		<property name="excludes">com.liferay.arquillian.sample.test</property>
-		<property name="includes">com.liferay.arquillian.sample.*</property>
-	</extension>
-
-	<engine>
-		<property name="deploymentExportPath">build/deployments</property>
-	</engine>
 </arquillian>

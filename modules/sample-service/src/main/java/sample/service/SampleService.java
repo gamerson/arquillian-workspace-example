@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.liferay.arquillian.sample.service;
+package sample.service;
 
 /**
  * @author Liferay

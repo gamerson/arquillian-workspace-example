@@ -14,9 +14,11 @@
  * limitations under the License.
  */
 
-package com.liferay.arquillian.sample.service;
+package sample.service.impl;
 
 import org.osgi.service.component.annotations.Component;
+
+import sample.service.SampleService;
 
 /**
  * @author Liferay

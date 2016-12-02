@@ -1,0 +1,5 @@
+Bundle-Name: sample-service
+Bundle-SymbolicName: sample.service
+Bundle-Version: 1.0.0
+Export-Package: sample.service
+Private-Package: sample.service.impl
