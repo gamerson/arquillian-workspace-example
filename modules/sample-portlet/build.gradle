@@ -18,7 +18,7 @@ startTestableTomcat {
 
 testIntegration {
 	dependsOn jar
-	
+
 	systemProperty 'jarFile', jar.archivePath
 }
 

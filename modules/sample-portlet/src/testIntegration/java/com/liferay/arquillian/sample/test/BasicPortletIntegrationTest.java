@@ -54,4 +54,5 @@ public class BasicPortletIntegrationTest {
 
 	@Inject
 	private SampleService _sampleService;
+
 }

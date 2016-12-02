@@ -11,7 +11,7 @@
 <portlet:actionURL name="add" var="portletURL" />
 
 <p>
-	<b>Sample Portlet is working!</b>
+	<b>Sample Portlet is deployed.</b>
 </p>
 
 <aui:form action="<%= portletURL %>" method="post" name="fm">
