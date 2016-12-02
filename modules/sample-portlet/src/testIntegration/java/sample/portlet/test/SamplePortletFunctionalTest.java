@@ -84,6 +84,7 @@ public class SamplePortletFunctionalTest {
 	}
 
 	@Test
+	@OperateOnDeployment("portlet")
 	public void testInstallPortlet() throws IOException, PortalException {
 		_browser.get(_portlerURL.toExternalForm());
 
